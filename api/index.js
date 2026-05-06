@@ -1,7 +1,7 @@
-require('dotenv').config({ path: require('path').join(__dirname, '../src/.env') });
+require('dotenv').config({ path: require('path').join(__dirname, '../backend/src/.env') });
 
 const express = require('express');
-const connectDB = require('../src/config/db');
+const connectDB = require('../backend/src/config/db');
 const cors = require('cors');
 
 const app = express();
@@ -19,9 +19,9 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/api/auth', require('../src/routes/auth'));
-app.use('/api/rooms', require('../src/routes/rooms'));
-app.use('/api/bookings', require('../src/routes/bookings'));
+app.use('/api/auth', require('../backend/src/routes/auth'));
+app.use('/api/rooms', require('../backend/src/routes/rooms'));
+app.use('/api/bookings', require('../backend/src/routes/bookings'));
 
 // Health check
 app.get('/api', (req, res) => {
