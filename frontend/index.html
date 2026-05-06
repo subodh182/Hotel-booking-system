@@ -795,9 +795,11 @@
 <!-- ═══════════════════════════════════════════ -->
 <!--  JAVASCRIPT                                 -->
 <!-- ═══════════════════════════════════════════ -->
-<script>
-  const API = 'http://localhost:5000/api';
-  let token = localStorage.getItem('token') || null;
+  // Auto-detect environment: Use localhost for local dev, and relative /api for Vercel
+  const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:'
+    ? 'http://localhost:5000/api' 
+    : '/api';
+
   let currentUser = JSON.parse(localStorage.getItem('user') || 'null');
 
   // ─── INIT ───
@@ -1146,14 +1148,6 @@
       if (loginPage.classList.contains('active')) handleLogin();
     }
   });
-  
-async function testAPI() {
-  const res = await fetch('http://localhost:5000/api/auth');
-  const data = await res.json();
-  console.log(data);
-}
-
-testAPI();
 
 </script>
 </body>

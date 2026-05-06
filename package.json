@@ -1,0 +1,16 @@
+{
+  "name": "luxstay-hotel-booking",
+  "version": "1.0.0",
+  "description": "LuxStay Hotel Booking & Management System",
+  "main": "backend/api/index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "cd backend && nodemon server.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": ["hotel", "booking", "nodejs", "mongodb"],
+  "author": "nitya",
+  "license": "ISC"
+}
