@@ -28,4 +28,10 @@ app.get('/api', (req, res) => {
   res.json({ status: 'LuxStay API is running ✅' });
 });
 
+// Serve frontend for all other routes
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
 module.exports = app;
