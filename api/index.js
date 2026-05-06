@@ -15,8 +15,16 @@ app.use(cors({
 
 app.use(express.json());
 
-// Connect DB (cached for serverless)
-connectDB();
+// Ensure DB is connected before handling any API request
+app.use('/api', async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('DB Connection Failed:', err.message);
+    res.status(500).json({ error: 'Database connection failed. Please check Vercel Environment Variables.' });
+  }
+});
 
 // Routes
 app.use('/api/auth', require('../backend/src/routes/auth'));
