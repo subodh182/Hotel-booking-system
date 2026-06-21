@@ -176,6 +176,6 @@ This project is licensed under the MIT License.
 **Subodh Singh**
 
 - GitHub: https://github.com/subodh182
-- LinkedIn: https://www.linkedin.com/in/subodh-singh
+- LinkedIn: https://www.linkedin.com/in/subodh-singh-0751082b2/
 
 ⭐ If you found this project useful, please give it a star on GitHub!
